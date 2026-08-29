@@ -1,0 +1,874 @@
+/* ============================================================
+   CUSTOM HEADER FONT
+   ============================================================ */
+
+@font-face {
+    font-family: "CS Bricker";
+    src: url("font/Satoshi-Light.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: #000;
+    color: white;
+
+    font-family:
+        "HelveticaNeue LT 27 Ult Lt Cn",
+        "HelveticaNeueLTCom-UltLtCn",
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-weight: 300;
+    font-size: 27px;
+
+    overflow-x: hidden;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.navbar {
+    --header-side-padding: 30px;
+    --films-photos-gap: 200px;
+
+    position: fixed !important;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    z-index: 9999;
+
+    background: transparent;
+
+    pointer-events: none;
+
+    padding-left: var(--header-side-padding);
+    padding-right: var(--header-side-padding);
+}
+
+
+/* ============================================================
+   LEFT NAV
+   ============================================================ */
+
+.nav-left {
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+
+    pointer-events: auto;
+}
+
+
+/* ============================================================
+   LEFT NAV LINKS
+   ============================================================ */
+
+.nav-left .nav-links {
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: var(--films-photos-gap);
+
+    width: auto;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ============================================================
+   CENTER LOGO
+   ============================================================ */
+
+.logo {
+    justify-self: center;
+
+    font-family: "CS Bricker", sans-serif;
+
+    font-size: 25px;
+    font-weight: normal;
+
+    color: white;
+
+    white-space: nowrap;
+
+    text-align: center;
+
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .7);
+
+    cursor: pointer;
+
+    pointer-events: auto;
+}
+
+
+/* ============================================================
+   RIGHT NAV
+   ============================================================ */
+
+.nav-right {
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 100%;
+
+    pointer-events: auto;
+}
+
+
+/* ============================================================
+   NAV LINKS
+   ============================================================ */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav-links li {
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav-links a {
+    font-family: "CS Bricker", sans-serif;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 20px;
+    font-weight: normal;
+
+    white-space: nowrap;
+
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .7);
+
+    transition: opacity .25s ease;
+
+    pointer-events: auto;
+}
+
+
+.nav-links a:hover {
+    opacity: .7;
+}
+
+
+/* ============================================================
+   PAGE TRANSITION
+   ============================================================ */
+
+#pageTransition {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #000;
+
+    opacity: 1;
+
+    pointer-events: none;
+
+    z-index: 50;
+
+    transition: opacity .8s ease;
+}
+
+
+/* ============================================================
+   PAGE CONTENT
+   ============================================================ */
+
+#pageContent {
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+
+#videoGrid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 34px 34px;
+
+    padding: 80px 0 22px;
+
+    /* Controls the overall width of the gallery */
+    width: 85%;
+
+    /* Centers the smaller gallery */
+    margin: 0 auto;
+}
+
+
+/* ============================================================
+   VIDEO ITEM
+   ============================================================ */
+
+.video-item {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* ============================================================
+   VIDEO CARD
+   ============================================================ */
+
+.video-card {
+    position: relative;
+
+    width: 100%;
+
+    /* Controls video height */
+    height: calc((100vh - 250px) / 2);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background: #000;
+}
+
+
+/* ============================================================
+   VIDEO
+   ============================================================ */
+
+.video-card video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform .35s ease;
+}
+
+
+/* ============================================================
+   VIDEO HOVER
+   ============================================================ */
+
+.video-card:hover video {
+    transform: scale(1.03);
+}
+
+
+/* ============================================================
+   SMALL GRADIENT ON HOVER
+   ============================================================ */
+
+.video-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0);
+
+    transition: background .3s ease;
+
+    pointer-events: none;
+}
+
+
+.video-card:hover::after {
+    background: rgba(0, 0, 0, .15);
+}
+
+
+/* ============================================================
+   VIDEO TITLE
+   ============================================================ */
+
+.video-title {
+    margin-top: 18px;
+
+    text-align: center;
+
+    font-family:
+        "HelveticaNeue LT 27 Ult Lt Cn",
+        "HelveticaNeueLTCom-UltLtCn",
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 300;
+
+    line-height: 1.4;
+
+    letter-spacing: .06em;
+
+    text-transform: uppercase;
+
+    color: white;
+}
+
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+
+.about-page {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    padding: 120px 8vw 60px;
+}
+
+
+/* ============================================================
+   ABOUT TEXT
+   ============================================================ */
+
+.about-text {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.about-text p {
+    font-size: 28px;
+
+    font-weight: 300;
+
+    line-height: 1.4;
+
+    max-width: 550px;
+}
+
+
+/* ============================================================
+   ABOUT IMAGE
+   ============================================================ */
+
+.about-image {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+}
+
+
+.about-image img {
+    width: 100%;
+
+    max-width: 600px;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+
+.modal {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, .85);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity .25s ease;
+
+    z-index: 999999;
+}
+
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ============================================================
+   POPUP
+   ============================================================ */
+
+.modal-content {
+    position: relative;
+
+    width: 80vw;
+
+    max-width: 1200px;
+
+    aspect-ratio: 16 / 9;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: #000;
+
+    box-shadow: 0 25px 80px rgba(0, 0, 0, .6);
+
+    transform: scale(.94);
+
+    transition: transform .25s ease;
+}
+
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+
+/* ============================================================
+   EMBEDDED YOUTUBE
+   ============================================================ */
+
+.video-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+
+/* ============================================================
+   CLOSE BUTTON
+   ============================================================ */
+
+#closeModal {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, .55);
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition: background .2s ease;
+}
+
+
+#closeModal:hover {
+    background: rgba(255, 255, 255, .2);
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 60px;
+
+        --header-side-padding: 20px;
+        --films-photos-gap: 20px;
+
+        padding-left: var(--header-side-padding);
+        padding-right: var(--header-side-padding);
+    }
+
+
+    .logo {
+        font-size: 19px;
+    }
+
+
+    .nav-links a {
+        font-size: 19px;
+    }
+
+
+    #videoGrid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 90px 14px 20px;
+
+        width: 100%;
+    }
+
+
+    .video-card {
+        height: 55vh;
+    }
+
+
+    .video-title {
+        margin-top: 12px;
+
+        font-size: 12px;
+    }
+
+
+    /* ABOUT PAGE MOBILE */
+
+    .about-page {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 100px 30px 50px;
+    }
+
+
+    .about-text {
+        order: 1;
+    }
+
+
+    .about-image {
+        order: 2;
+
+        justify-content: center;
+    }
+
+
+    .about-text p {
+        font-size: 22px;
+    }
+
+
+    .about-image img {
+        max-width: 100%;
+    }
+
+
+    /* PHOTOS PAGE MOBILE */
+
+    .photos-page {
+        padding: 90px 14px 30px;
+    }
+
+
+    .landscape-grid,
+    .portrait-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ============================================================
+   PHOTOS PAGE
+   ============================================================ */
+
+.photos-page {
+    width: 100%;
+
+    padding: 120px 35px 40px;
+}
+
+
+/* ============================================================
+   LANDSCAPE PHOTOS
+   ============================================================ */
+
+.landscape-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    width: 100%;
+}
+
+
+.landscape-grid img {
+    width: 100%;
+
+    /* Consistent landscape frame */
+    aspect-ratio: 3 / 2;
+
+    object-fit: cover;
+
+    display: block;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+}
+
+
+.landscape-grid img:hover {
+    opacity: 0.8;
+}
+
+
+/* ============================================================
+   PORTRAIT PHOTOS
+   ============================================================ */
+
+.portrait-grid {
+    display: grid;
+
+    /* Two photos occupy first 2/3, third space stays empty */
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    align-items: start;
+}
+
+
+.portrait-grid img {
+    width: 100%;
+
+    /* Keeps the natural portrait proportions */
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+}
+
+
+.portrait-grid img:hover {
+    opacity: 0.8;
+}
+
+
+/* ============================================================
+   PHOTO LIGHTBOX
+   ============================================================ */
+
+.photo-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+
+/* Open state */
+
+.photo-lightbox.active {
+    display: flex;
+}
+
+
+/* Expanded image */
+
+.photo-lightbox img {
+    max-width: 75vw;
+    max-height: 75vh;
+
+    object-fit: contain;
+}
+
+
+/* Close button */
+
+.close-photo {
+    position: absolute;
+
+    top: 30px;
+    left: 35px;
+
+    background: none;
+    border: none;
+
+    color: white;
+
+    font-size: 42px;
+
+    font-weight: 300;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+    padding: 0;
+
+    z-index: 10000;
+}
+
+/* ============================================================
+   PHOTO LIGHTBOX ARROWS
+   ============================================================ */
+
+.previous-photo,
+.next-photo {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 50px;
+
+    font-weight: 200;
+
+    cursor: pointer;
+
+    z-index: 10000;
+
+    opacity: 0.8;
+
+    transition: opacity 0.2s ease;
+}
+
+
+.previous-photo:hover,
+.next-photo:hover {
+    opacity: 1;
+}
+
+
+/* Left arrow */
+
+.previous-photo {
+    left: 35px;
+}
+
+
+/* Right arrow */
+
+.next-photo {
+    right: 35px;
+}
+
+.inactive-link {
+    cursor: default;
+    pointer-events: none;
+}

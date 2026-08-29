@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ============================================================
+           PAGE FADE
+           ============================================================ */
+
+        #pageTransition {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: #000;
+
+            z-index: 50;
+
+            pointer-events: none;
+
+            opacity: 1;
+
+            transition: opacity 0.8s ease;
+        }
+
+
+        /* ============================================================
+           PAGE CONTENT
+           ============================================================ */
+
+        #pageContent {
+            position: relative;
+
+            z-index: 1;
+        }
+
+
+        /* ============================================================
+           HOME LINK
+           ============================================================ */
+
+        #homeLink {
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ============================================================
+         PAGE TRANSITION
+         ============================================================ -->
+
+    <div id="pageTransition"></div>
+
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+
+    <header class="navbar">
+
+
+        <!-- ===================== LEFT NAV ===================== -->
+
+        <nav class="nav-left">
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Films</a>
+                </li>
+
+                <li>
+                    <a href="photos.html">Photos</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- ===================== CENTER LOGO ===================== -->
+
+        <div class="logo" id="homeLink">
+
+            ROMAIN DELEUZE-BISSON
+
+        </div>
+
+
+        <!-- ===================== RIGHT NAV ===================== -->
+
+        <nav class="nav-right">
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#" class="inactive-link">About &amp; Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+    </header>
+
+
+    <!-- ============================================================
+         PAGE CONTENT
+         ============================================================ -->
+
+    <div id="pageContent">
+
+        <main>
+
+            <!-- Videos are created by script.js -->
+
+            <div id="videoGrid"></div>
+
+        </main>
+
+
+        <!-- ========================================================
+             YOUTUBE MODAL
+             ======================================================== -->
+
+        <div id="videoModal" class="modal">
+
+            <div class="modal-content">
+
+                <button id="closeModal">&times;</button>
+
+                <div class="video-wrapper">
+
+                    <iframe
+                        id="youtubePlayer"
+                        src=""
+                        title="YouTube Video Player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================================================
+         JAVASCRIPT
+         ============================================================ -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

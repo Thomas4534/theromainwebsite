@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Photos | Romain Deleuze Bisson</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ============================================================
+         PAGE TRANSITION
+         ============================================================ -->
+
+    <div id="pageTransition"></div>
+
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+
+    <header class="navbar">
+
+
+        <!-- ===================== LEFT NAV ===================== -->
+
+        <nav class="nav-left">
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Films</a>
+                </li>
+
+                <li>
+                    <a href="photos.html">Photos</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- ===================== CENTER LOGO ===================== -->
+
+        <div class="logo" id="homeLink">
+
+            ROMAIN DELEUZE-BISSON
+
+        </div>
+
+
+        <!-- ===================== RIGHT NAV ===================== -->
+
+        <nav class="nav-right">
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#" class="inactive-link">About &amp; Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+    </header>
+
+
+
+    <!-- ============================================================
+         PHOTOS
+         ============================================================ -->
+
+    <main class="photos-page">
+
+
+        <!-- ========================================================
+             LANDSCAPE PHOTOS — 3 x 3 GRID
+             ======================================================== -->
+
+        <div class="landscape-grid">
+
+            <img src="photos/1.JPG" alt="">
+            <img src="photos/2.JPG" alt="">
+            <img src="photos/3.JPG" alt="">
+
+            <img src="photos/4.JPG" alt="">
+            <img src="photos/5.JPG" alt="">
+            <img src="photos/6.JPG" alt="">
+
+            <img src="photos/7.JPG" alt="">
+            <img src="photos/8.JPG" alt="">
+            <img src="photos/10.JPG" alt="">
+
+        </div>
+
+
+        <!-- ========================================================
+             PORTRAIT PHOTOS — THIRD SPACE RESERVED
+             ======================================================== -->
+
+        <div class="portrait-grid">
+
+            <img src="photos/9.JPG" alt="">
+            <img src="photos/11.JPG" alt="">
+
+            <!-- Third space intentionally left empty -->
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ============================================================
+         PHOTO LIGHTBOX
+         ============================================================ -->
+
+    <div class="photo-lightbox">
+
+
+        <!-- Close -->
+
+        <button class="close-photo">&times;</button>
+
+
+        <!-- Previous -->
+
+        <button class="previous-photo">&#10094;</button>
+
+
+        <!-- Expanded Photo -->
+
+        <img
+            src=""
+            alt=""
+            id="expanded-photo"
+        >
+
+
+        <!-- Next -->
+
+        <button class="next-photo">&#10095;</button>
+
+
+    </div>
+
+
+
+    <!-- ============================================================
+         JAVASCRIPT
+         ============================================================ -->
+
+    <!-- Page fade + navigation -->
+
+    <script src="script.js"></script>
+
+
+    <!-- Photo lightbox + arrows -->
+
+    <script src="photos.js"></script>
+
+
+</body>
+
+</html>
