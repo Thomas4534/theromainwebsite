@@ -111,21 +111,21 @@ if (videoGrid) {
     const videos = [
 
         {
-            file: "assets/tokyo.mp4",
+            file: "https://pub-d8d3cede873e4bdd886a5853ea6d97e1.r2.dev/tokyo.mp4",
             youtubeID: "-bY9iHjg-4A",
             title: "TOKYO 450",
             startTime: 5
         },
 
         {
-            file: "assets/film.mp4",
+            file: "https://pub-d8d3cede873e4bdd886a5853ea6d97e1.r2.dev/film.mp4",
             youtubeID: "SIpI3hXHLmU",
             title: "CAPTIF",
             startTime: 0
         },
 
         {
-            file: "assets/scrap.mp4",
+            file: "https://pub-d8d3cede873e4bdd886a5853ea6d97e1.r2.dev/scrap.mp4",
             youtubeID: "HakFqYzeoh4",
             title: "La Cour à Scrap",
             startTime: 9
